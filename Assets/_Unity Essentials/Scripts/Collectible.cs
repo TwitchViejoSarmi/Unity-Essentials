@@ -4,6 +4,7 @@ public class Collectible : MonoBehaviour
 {
     public float rotationSpeed;
     public GameObject onCollectEffect;
+    public GameObject onCollectSFX;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +26,8 @@ public class Collectible : MonoBehaviour
             Destroy(gameObject);
             // Instantiate the onCollectEffect at the collectible's position
             Instantiate(onCollectEffect, transform.position, transform.rotation);
+            // Instantiate the onCollectSFX at the collectible's position
+            Instantiate(onCollectSFX, transform.position, transform.rotation);
         }
     }
 }

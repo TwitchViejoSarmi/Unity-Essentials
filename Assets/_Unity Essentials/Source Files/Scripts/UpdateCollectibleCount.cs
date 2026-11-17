@@ -5,6 +5,7 @@ using System; // Required for Type handling
 public class UpdateCollectibleCount : MonoBehaviour
 {
     private TextMeshProUGUI collectibleText; // Reference to the TextMeshProUGUI component
+    private int totalCollectibles = 0;
 
     void Start()
     {
@@ -22,9 +23,11 @@ public class UpdateCollectibleCount : MonoBehaviour
         UpdateCollectibleDisplay();
     }
 
+    public int GetTotalCollectibles() { return totalCollectibles; }
+
     private void UpdateCollectibleDisplay()
     {
-        int totalCollectibles = 0;
+        totalCollectibles = 0;
 
         // Check and count objects of type Collectible
         Type collectibleType = Type.GetType("Collectible");
